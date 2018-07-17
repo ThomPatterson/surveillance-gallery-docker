@@ -4,7 +4,7 @@ WORKDIR /usr/app
 
 RUN apk update && \
     apk upgrade && \
-    apk add git && \
+    apk add git tzdata && \
     git clone -b express-rewrite https://github.com/ThomPatterson/surveillance-gallery.git && \
     cd surveillance-gallery && \
     npm install && \
@@ -16,6 +16,8 @@ WORKDIR /usr/app/surveillance-gallery
 VOLUME /usr/data/images
 
 ENV CONFIG=[{\"name\":\"Backyard\",\"directory\":\"/usr/data/images/backyard\",\"fileExt\":\".jpg\",\"daysToFetch\":4}]
+
+ENV TZ=America/Chicago
 
 EXPOSE 8080
 

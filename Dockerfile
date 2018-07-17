@@ -5,7 +5,7 @@ WORKDIR /usr/app
 RUN apk update && \
     apk upgrade && \
     apk add git tzdata && \
-    git clone -b express-rewrite https://github.com/ThomPatterson/surveillance-gallery.git && \
+    git clone https://github.com/ThomPatterson/surveillance-gallery.git && \
     cd surveillance-gallery && \
     npm install && \
     apk del git && \
